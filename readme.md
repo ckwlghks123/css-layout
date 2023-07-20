@@ -6,6 +6,7 @@
 
 # 주제 : 내 웹사이트의 메인페이지의 레이아웃을 html과 css를 활용해서 꾸미기
 
+![screencapture-127-0-0-1-5500-index-html-2023-07-21-03_24_49](https://github.com/ckwlghks123/css-layout/assets/83552466/110e2d75-864a-46ab-8e46-461858582e82)
 
 
 * * *
