@@ -129,43 +129,230 @@ table {
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  width: 100vw;
-  font-size: 50px;
-  font-weight: bold;
-}
-
-.layout {
-  width: 70%;
-  display: flex;
-  justify-content: center;
+  /* display: flex;
   flex-direction: column;
-  border: 2px solid black;
+  justify-content: center; */
 }
 
 header {
-  display: grid;
-  place-items: center;
-  height: 2em;
+  height: 6.6rem;
+  background-color: #1d1d1d;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+header li {
+  cursor: pointer;
+}
+
+header nav.left__nav .logo img {
+  width: 129px;
+  aspect-ratio: auto 129 / 48;
+}
+
+header .nav__wrapper {
+  display: flex;
+  width: 1184px;
+  padding-top: 25px;
+}
+
+header nav.left__nav {
+  display: flex;
+}
+
+header nav.left__nav .menu {
+  display: flex;
+  margin-left: 25px;
+  margin-top: 17px;
+  font-size: 18px;
+}
+
+header nav.left__nav .menu li {
+  /* display: flex;
+  flex-direction: column; */
+  /* justify-content: center; */
+  margin-right: 25px;
+}
+
+header nav.left__nav .menu li:nth-child(4) {
+  height: 20px;
+  width: 1px;
+  background-color: white;
+  cursor: default;
+}
+
+.right__nav {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.right__nav .right__menu {
+  display: flex;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.right__nav .right__menu li {
+  margin-right: 16px;
+}
+
+.right__nav .right__menu li:nth-child(3) {
+  width: 1px;
+  height: 14px;
+  background-color: #fff;
+  cursor: default;
+}
+
+.shopping-cart {
+  width: 48px;
+  height: 48px;
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgZmlsbD0iI2ZmZiI+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik04LjUgMTdjLjgyOCAwIDEuNS42NzIgMS41IDEuNVM5LjMyOCAyMCA4LjUgMjAgNyAxOS4zMjggNyAxOC41IDcuNjcyIDE3IDguNSAxN3ptOCAwYy44MjggMCAxLjUuNjcyIDEuNSAxLjVzLS42NzIgMS41LTEuNSAxLjUtMS41LS42NzItMS41LTEuNS42NzItMS41IDEuNS0xLjV6bS04IDFjLS4yNzYgMC0uNS4yMjQtLjUuNXMuMjI0LjUuNS41LjUtLjIyNC41LS41LS4yMjQtLjUtLjUtLjV6bTggMGMtLjI3NiAwLS41LjIyNC0uNS41cy4yMjQuNS41LjUuNS0uMjI0LjUtLjUtLjIyNC0uNS0uNS0uNXpNNi41IDVjLjE3MSAwIC4zMjkuMDg4LjQyLjIyOGwuMDQuMDc1LjcyOSAxLjcwMkw3Ljc1IDdoOS43NWMuMzI0IDAgLjU1NS4zLjQ5LjYwM2wtLjAyNi4wODMtMiA1Yy0uMDY1LjE2Mi0uMjEuMjc3LS4zNzguMzA3TDE1LjUgMTNIOS43NjdsLTEuMzMzIDJoOC4zMTZjLjI0NSAwIC40NS4xNzcuNDkyLjQxbC4wMDguMDljMCAuMjQ1LS4xNzcuNDUtLjQxLjQ5MmwtLjA5LjAwOEg3LjVjLS4zNyAwLS42MDMtLjM4NC0uNDU3LS43MDVsLjA0MS0uMDcyIDEuODQ5LTIuNzc2TDYuMTcgNkg0LjVjLS4yNDUgMC0uNDUtLjE3Ny0uNDkyLS40MUw0IDUuNWMwLS4yNDUuMTc3LS40NS40MS0uNDkyTDQuNSA1aDJ6bTEwLjI2MSAzSDguMTE1bDEuNzE0IDRoNS4zMzJsMS42LTR6Ii8+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4K")
+    no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.hamburger {
+  width: 48px;
+  height: 48px;
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgZmlsbD0iI2ZmZiI+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0xNy41IDE2Yy4yNzYgMCAuNS4yMjQuNS41cy0uMjI0LjUtLjUuNWgtMTFjLS4yNzYgMC0uNS0uMjI0LS41LS41cy4yMjQtLjUuNS0uNWgxMXptMC00Yy4yNzYgMCAuNS4yMjQuNS41cy0uMjI0LjUtLjUuNWgtMTFjLS4yNzYgMC0uNS0uMjI0LS41LS41cy4yMjQtLjUuNS0uNWgxMXptMC00Yy4yNzYgMCAuNS4yMjQuNS41cy0uMjI0LjUtLjUuNWgtMTFjLS4yNzYgMC0uNS0uMjI0LS41LS41cy4yMjQtLjUuNS0uNWgxMXoiLz4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPgo=")
+    no-repeat;
+  background-size: cover;
+  cursor: pointer;
 }
 
 .section1 {
-  display: grid;
-  place-items: center;
-  height: 10em;
-  border: 2px solid red;
+  background: url("https://www.jeongyookgak.com/static/img/main_firstgift_logout.7a6bc62.png")
+    50% 50% no-repeat;
+  background-size: cover;
+  height: 35rem;
 }
 
 .section2 {
-  height: 30em;
+  width: 1184px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.top__banner {
+  margin-top: 2.7rem;
+  display: flex;
+}
+
+.left__carousel {
+  width: 592px;
+  height: 176px;
+  aspect-ratio: auto 592 / 176;
+  background: url("https://cdne-gateway-devops-connectivity-kc-001.azureedge.net/$web/open_assets/marketing/crm/promotion/2023/202307_event_chickenday/2week/202307_event_chickenday2-pc-banner.png")
+    no-repeat;
+  background-size: cover;
+}
+
+.right__banner {
+  background: url("https://www.jeongyookgak.com/static/img/banner.f90dcf6.png")
+    no-repeat;
+  background-size: cover;
+  width: 592px;
+  height: 176px;
+  aspect-ratio: auto 592 / 176;
+}
+
+.product__list {
+  display: flex;
+  flex-direction: column;
+  height: 65rem;
+  margin-top: 6.5rem;
+  margin-bottom: 8rem;
+  width: 1184px;
+}
+
+.section__title {
+  font-weight: bold;
+  font-size: 2rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.products__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: space-between;
+  flex-wrap: wrap;
+  margin-top: 2.5rem;
+}
+
+.products__list li {
+  margin-bottom: 2rem;
+}
+
+.products__list li > div {
+  position: relative;
+  height: 416px;
+  width: 376px;
+  background-color: #f9f7f8;
   display: grid;
   place-items: center;
 }
 
-footer {
+.product__list li > div .cart-button {
+  width: 72px;
+  height: 72px;
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid #eee;
+  background-color: #fff;
+  box-shadow: 0 25px 10px -15px rgba(0, 0, 0, 0.12);
+  right: 20px;
+  bottom: 20px;
   display: grid;
   place-items: center;
-  height: 5.5em;
-  border-top: 2px solid black;
+}
+
+.product__list li > div .cart-button:hover {
+  background-color: #212121;
+  border: 2px solid #212121;
+}
+
+.product__list li > div > button > i {
+  display: block;
+  position: relative;
+  right: 4px;
+  width: 68px;
+  height: 68px;
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3MiIgaGVpZ2h0PSI3MiIgdmlld0JveD0iMCAwIDcyIDcyIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgZmlsbD0iIzIxMjEyMSI+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0yOC41IDQ3LjVjMi4yMSAwIDQgMS43OSA0IDRzLTEuNzkgNC00IDQtNC0xLjc5LTQtNCAxLjc5LTQgNC00em0xNiAwYzIuMjEgMCA0IDEuNzkgNCA0cy0xLjc5IDQtNCA0LTQtMS43OS00LTQgMS43OS00IDQtNHptLTE2IDNjLS41NTIgMC0xIC40NDgtMSAxcy40NDggMSAxIDEgMS0uNDQ4IDEtMS0uNDQ4LTEtMS0xem0xNiAwYy0uNTUyIDAtMSAuNDQ4LTEgMXMuNDQ4IDEgMSAxIDEtLjQ0OCAxLTEtLjQ0OC0xLTEtMXpNMjMgMjBjLjU0NSAwIDEuMDQyLjI5NSAxLjMwNi43NjNsLjA2Ni4xMzJMMjUuNzQyIDI0SDUxYzEuMDUgMCAxLjc2MiAxLjA0NiAxLjQxMSAyLjAwOWwtLjA1LjEyLTYgMTNjLS4yMjQuNDg3LS42OS44MTMtMS4yMTYuODY0TDQ1IDQwSDMxLjMwM2wtMiAzSDQ2LjVjLjc4IDAgMS40Mi41OTUgMS40OTMgMS4zNTZMNDggNDQuNWMwIC43OC0uNTk1IDEuNDItMS4zNTYgMS40OTNMNDYuNSA0NmgtMjBjLTEuMTU0IDAtMS44NTktMS4yMzgtMS4zMTYtMi4yMmwuMDY4LS4xMTIgMy41NDMtNS4zMTZMMjIuMDIyIDIzSDE4LjVjLS43OCAwLTEuNDItLjU5NS0xLjQ5My0xLjM1NkwxNyAyMS41YzAtLjc4LjU5NS0xLjQyIDEuMzU2LTEuNDkzTDE4LjUgMjBIMjN6bTI1LjY1NSA3SDI3LjA2Nmw0LjQxMiAxMEg0NC4wNGw0LjYxNS0xMHoiLz4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPgo=")
+    no-repeat;
+  background-size: cover;
+}
+
+.product__list li > div > button > i:hover {
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3MiIgaGVpZ2h0PSI3MiIgdmlld0JveD0iMCAwIDcyIDcyIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgZmlsbD0iI2ZmZiI+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0yOC41IDQ3LjVjMi4yMSAwIDQgMS43OSA0IDRzLTEuNzkgNC00IDQtNC0xLjc5LTQtNCAxLjc5LTQgNC00em0xNiAwYzIuMjEgMCA0IDEuNzkgNCA0cy0xLjc5IDQtNCA0LTQtMS43OS00LTQgMS43OS00IDQtNHptLTE2IDNjLS41NTIgMC0xIC40NDgtMSAxcy40NDggMSAxIDEgMS0uNDQ4IDEtMS0uNDQ4LTEtMS0xem0xNiAwYy0uNTUyIDAtMSAuNDQ4LTEgMXMuNDQ4IDEgMSAxIDEtLjQ0OCAxLTEtLjQ0OC0xLTEtMXpNMjMgMjBjLjU0NSAwIDEuMDQyLjI5NSAxLjMwNi43NjNsLjA2Ni4xMzJMMjUuNzQyIDI0SDUxYzEuMDUgMCAxLjc2MiAxLjA0NiAxLjQxMSAyLjAwOWwtLjA1LjEyLTYgMTNjLS4yMjQuNDg3LS42OS44MTMtMS4yMTYuODY0TDQ1IDQwSDMxLjMwM2wtMiAzSDQ2LjVjLjc4IDAgMS40Mi41OTUgMS40OTMgMS4zNTZMNDggNDQuNWMwIC43OC0uNTk1IDEuNDItMS4zNTYgMS40OTNMNDYuNSA0NmgtMjBjLTEuMTU0IDAtMS44NTktMS4yMzgtMS4zMTYtMi4yMmwuMDY4LS4xMTIgMy41NDMtNS4zMTZMMjIuMDIyIDIzSDE4LjVjLS43OCAwLTEuNDItLjU5NS0xLjQ5My0xLjM1NkwxNyAyMS41YzAtLjc4LjU5NS0xLjQyIDEuMzU2LTEuNDkzTDE4LjUgMjBIMjN6bTI1LjY1NSA3SDI3LjA2Nmw0LjQxMiAxMEg0NC4wNGw0LjYxNS0xMHoiLz4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPgo=);
+  background-size: cover;
+}
+
+.products__list li img {
+  width: 276px;
+  height: 276px;
+}
+
+.products__list li h6 {
+  margin-top: 1.2rem;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.products__list li p {
+  margin-top: 0.6rem;
+  font-size: 16px;
+  color: #9b9b9b;
+}
+
+footer {
+  margin-top: 10rem;
+  border-top: 1px solid #bdbdbd;
+  height: 18rem;
 }
